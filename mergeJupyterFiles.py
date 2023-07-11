@@ -24,18 +24,18 @@ def create_baseFile():
 	"name": "python",
 	"nbconvert_exporter": "python",
 	"pygments_lexer": "ipython3",
-	"version": "3.7.4"}
+	"version": "3.9.2"}
 	},
 	
 	"nbformat": 4,
 	"nbformat_minor": 2}'''
 
 	Filename = 'baseFile.ipynb'
-	with open(Filename,'w+') as f:
+	with open(Filename,'w+', encoding ="utf8") as f:
 	    f.write(baseData)
 
 def read_file_as_json(Filename):
-    with open(Filename,'r') as f:
+    with open(Filename,'r', encoding ="utf8") as f:
         whole_file = f.read()
     data = json.loads(whole_file)
     return data
@@ -64,7 +64,7 @@ def mergeAllJupyterFile(file=None):
 
     # dump data in baseFile
     Filename = 'baseFile.ipynb'
-    with open(Filename,'w+') as f:
+    with open(Filename,'w+', encoding ="utf8") as f:
             f.write(json.dumps(base_file))
         
 def create_base_for_results():
